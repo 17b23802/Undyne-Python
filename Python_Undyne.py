@@ -21,7 +21,7 @@ def PressKey(key):
      keyboardController.release(key)
 
 def IfSpear(colour):
-    isBlack=colour[0] >= black and colour[1] >= black #If the colour is the background (black). B is not included as sometimes black is (0,0,70)
+    isBlack=colour[0] <= black and colour[1] <= black #If the colour is the background (black). B is not included as sometimes black is (0,0,70)
     isWhite= colour[0]==colour[1] and colour[1] == colour[2] #All 3 colours being the same is only true for the border of the box and for the characters
     isShield = colour[0] >= shieldR1 and colour[0] <= shieldR2 and colour[1] >= shieldG1 and colour[1] <= shieldG2 #If the colour is the blue shield
     return not (isBlack or isWhite or isShield)
